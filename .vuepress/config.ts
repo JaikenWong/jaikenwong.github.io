@@ -9,7 +9,7 @@ export default defineUserConfig({
     style: "@vuepress-reco/style-default",
     logo: "/logo-small.png",
     author: "Jaiken Wong",
-    authorAvatar: "/head.png",
+    authorAvatar: "/logo-small.png",
     docsRepo: "https://github.com/JaikenWong/jaikenwong.github.io",
     docsBranch: "gh-pages",
     docsDir: "/",
