@@ -39,6 +39,17 @@ export default defineUserConfig({
         ],
       },
     ],
+    commentConfig: {
+      type: 'giscus',
+      options: {
+        repo: 'JaikenWong/jaikenwong.github.io',
+        repoId: 'R_kgDOLoVp8w',
+        category: 'Announcements',
+        categoryId: 'DIC_kwDOLoVp884CeYXI',
+        mapping: 'title',
+        hideComments: false, // 全局隐藏评论，默认 false
+      },
+    },
     // bulletin: {
     //   body: [
     //     {
