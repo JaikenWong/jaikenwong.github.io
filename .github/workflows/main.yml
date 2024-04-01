@@ -7,6 +7,8 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
 # 任务
 jobs:
   build-and-deploy:
@@ -15,31 +17,21 @@ jobs:
     steps:
       # 拉取代码
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          # 如果你文档需要 Git 子模块，取消注释下一行
+          # submodules: true
           
       # 设置 Node.js 版本
       - name: Setup Node.js environment
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: "21.7.1"
-          
-      # 缓存 node_modules
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        id: yarn-cache
-        with:
-          path: |
-            **/node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      # 如果缓存没有命中，安装依赖
-      - name: Install dependencies
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn --frozen-lockfile
+          cache: npm
+      
+      - name: 安装依赖
+        run: npm ci    
 
       # 生成静态文件
       - name: Build
