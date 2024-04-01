@@ -44,4 +44,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }} # ACCESS_TOKEN 是创建的 Secret 名称，替换为你自己创建的名称
         with:
           target-branch: gh-pages # 部署到 gh-pages 分支，master 分支存放的是项目源码，而 gh-pages 分支则用来存放生成的静态文件
-          build_dir: docs/.vuepress/dist # vuepress 生成的静态文件存放的地方
+          build_dir: .vuepress/dist # vuepress 生成的静态文件存放的地方
