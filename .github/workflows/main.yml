@@ -39,7 +39,7 @@ jobs:
 
       # 部署到 GitHub Pages
       - name: Deploy
-        uses: crazy-max/ghaction-github-pages@v2
+        uses: crazy-max/ghaction-github-pages@v4
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }} # ACCESS_TOKEN 是创建的 Secret 名称，替换为你自己创建的名称
         with:
