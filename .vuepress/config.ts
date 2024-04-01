@@ -7,12 +7,12 @@ export default defineUserConfig({
   description: "Just playing around",
   theme: recoTheme({
     style: "@vuepress-reco/style-default",
-    logo: "/logo.png",
-    author: "reco_luan",
+    logo: "/logo-small.png",
+    author: "Jaiken Wong",
     authorAvatar: "/head.png",
     docsRepo: "https://github.com/JaikenWong/jaikenwong.github.io",
-    docsBranch: "main",
-    docsDir: "example",
+    docsBranch: "gh-pages",
+    docsDir: "/",
     lastUpdatedText: "",
     // series 为原 sidebar
     series: {
