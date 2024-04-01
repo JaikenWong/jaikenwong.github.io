@@ -46,7 +46,7 @@ export default defineUserConfig({
         repoId: 'R_kgDOLoVp8w',
         category: 'Announcements',
         categoryId: 'DIC_kwDOLoVp884CeYXI',
-        mapping: 'pathname',
+        mapping: 'title',
         hideComments: false, // 全局隐藏评论，默认 false
       },
     },
