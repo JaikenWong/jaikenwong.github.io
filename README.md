@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://jaikenwong.github.io/" target="_blank" rel="noopener noreferrer">
-    <img width="200" src=".vuepress/public/logo.jpg" alt="logo" />
+    <img width="200" src="images/niubi.png" alt="logo" />
   </a>
 </p>
 <br/>
