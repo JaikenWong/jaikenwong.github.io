@@ -1,5 +1,4 @@
 import { defineUserConfig } from "vuepress";
-import type { DefaultThemeOptions } from "vuepress";
 import recoTheme from "vuepress-theme-reco";
 
 export default defineUserConfig({
@@ -39,6 +38,14 @@ export default defineUserConfig({
         ],
       },
     ],
+    commentConfig: {
+      type: 'valine',
+      options: {
+        appId: 'o0AfeswXQBtOlIZY6EEspCEJ-MdYXbMMI', // your appId
+        appKey: 'WvhLItagHwgS3jQ6RTjvT9vr', // your appKey
+        hideComments: false, // 全局隐藏评论，默认 false
+      }
+    },
     // bulletin: {
     //   body: [
     //     {
