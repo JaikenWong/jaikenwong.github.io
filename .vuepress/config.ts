@@ -4,6 +4,16 @@ import recoTheme from "vuepress-theme-reco";
 export default defineUserConfig({
   title: "Jaiken's Blog",
   description: "Just playing around",
+  head: [
+    ["link", { rel: "icon", href: "/favicon.ico" }],
+    [
+      "meta",
+      {
+        name: "viewport",
+        content: "width=device-width,initial-scale=1,user-scalable=no",
+      },
+    ],
+  ],
   theme: recoTheme({
     style: "@vuepress-reco/style-default",
     logo: "/logo-small.png",
@@ -34,10 +44,10 @@ export default defineUserConfig({
       {
         text: "开发工具",
         children: [
-          { text: "Terminal", link:"/categories/terminal/1/" },
+          { text: "Terminal", link: "/categories/terminal/1/" },
           { text: "Git", link: "/categories/git/1/" },
           { text: "Git Pages", link: "/categories/gitpages/1/" },
-          { text: "Other", link: "/categories/tools-other/1/" }
+          { text: "Other", link: "/categories/tools-other/1/" },
         ],
       },
       {
@@ -46,9 +56,9 @@ export default defineUserConfig({
           { text: "Helm", link: "/docs/clouddev" },
           { text: "K8S", link: "/docs/clouddev" },
           { text: "Docker", link: "/docs/clouddev" },
-          { text: "Istio", link: "/docs/clouddev" }
+          { text: "Istio", link: "/docs/clouddev" },
         ],
       },
-    ]
-  })
+    ],
+  }),
 });
