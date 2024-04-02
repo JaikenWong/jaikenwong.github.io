@@ -28,8 +28,9 @@ export default defineUserConfig({
     },
     navbar: [
       { text: "Home", link: "/" },
-      { text: "Categories", link: "/categories/reco/1/" },
-      { text: "Tags", link: "/tags/tag1/1/" },
+      { text: "操作系统", link: "/categories/reco/1/" },
+      { text: "场景面试", link: "/tags/tag1/1/" },
+      { text: "Rust语言", link: "/tags/tag1/1/" },
       {
         text: "Docs",
         children: [
