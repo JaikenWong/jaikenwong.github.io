@@ -32,10 +32,21 @@ export default defineUserConfig({
       { text: "场景面试", link: "/categories/interview/1/" },
       { text: "Rust语言", link: "/categories/rust/1/" },
       {
-        text: "Docs",
+        text: "开发工具",
         children: [
-          { text: "vuepress-reco", link: "/docs/theme-reco/theme" },
-          { text: "vuepress-theme-reco", link: "/blogs/other/guide" },
+          { text: "Terminal", link:"/categories/terminal/1/" },
+          { text: "Git", link: "/docs/tools" },
+          { text: "Git Pages", link: "/docs/tools" },
+          { text: "Other", link: "/docs/tools" }
+        ],
+      },
+      {
+        text: "云原生",
+        children: [
+          { text: "Helm", link: "/docs/clouddev" },
+          { text: "K8S", link: "/docs/clouddev" },
+          { text: "Docker", link: "/docs/clouddev" },
+          { text: "Istio", link: "/docs/clouddev" }
         ],
       },
     ]
