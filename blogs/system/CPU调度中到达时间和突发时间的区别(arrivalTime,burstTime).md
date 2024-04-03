@@ -2,7 +2,7 @@
 title: CPU调度中到达时间和突发时间的区别(arrivalTime,burstTime)
 date: 2024/04/02
 categories:
- - system
+ - 操作系统
 ---
 
 CPU 调度算法需要其执行所需的 CPU 时间和 IO 时间。CPU时间是CPU执行进程所花费的时间，而I/O时间说明了进程进行I/O操作所需的时间。
@@ -20,9 +20,11 @@ CPU 调度算法需要其执行所需的 CPU 时间和 IO 时间。CPU时间是C
 = 完成时间 (C.T.) - 等待时间 (W.T.)
 ```
 下表说明了三个进程 P1、P2 和 P3 的到达和突发时间。为执行这些进程分配了一个 CPU。
-![image.jpg](https://cdn.nlark.com/yuque/0/2024/png/34556458/1711947340832-4c654152-6908-4a86-b7dd-f25bbfe14a39.png#averageHue=%23fafafa&clientId=ua9bb3bf5-6f91-4&from=paste&id=uea9717c7&originHeight=256&originWidth=590&originalType=url&ratio=1&rotation=0&showTitle=false&size=7025&status=done&style=none&taskId=u41478968-e62b-436f-8ec9-de95fdcfb03&title=)
+![1712141170273image.jpg](https://fastly.jsdelivr.net/gh/JaikenWong/Drawing-Bed@main/images/1712141170273image.jpg)
+
 如果计算甘特图，则基于 FCFS 调度，其中首先执行就绪队列中的第一个进程。进程的到达决定了进程的执行顺序，时间等于它的突发时间。
-![image.jpg](https://cdn.nlark.com/yuque/0/2024/png/34556458/1711947340862-f79a951d-0380-412c-996e-7f7cf0fe77f9.png#averageHue=%23fafafa&clientId=ua9bb3bf5-6f91-4&from=paste&id=u5a347aee&originHeight=317&originWidth=698&originalType=url&ratio=1&rotation=0&showTitle=false&size=43058&status=done&style=none&taskId=u55d9a98a-be63-472a-8504-f00708dd02f&title=)
+![1712141224211image.jpg](https://fastly.jsdelivr.net/gh/JaikenWong/Drawing-Bed@main/images/1712141224211image.jpg)
+
 由于进程 P2 4ms 到达，进程 P1 需要 3ms 执行(=Burst Time)，CPU 等待 1ms，即 CPU 的空闲时间，此时它不执行任何进程执行。最后执行的进程是 P3。
 下表分别说明了到达时间和突发时间的主要区别：
 

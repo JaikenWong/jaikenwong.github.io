@@ -2,17 +2,19 @@
 title: Windows 安装 Rust
 date: 2024/04/02
 categories:
- - rust
+ - Rust
 ---
 
 Rust 本来提供了完整的 Windows 安装程序，但是要求同时安装 Visual C++ 编译工具，此外我怀疑它会修改系统（注册表、环境变量什么的），或者在用户目录（`%USERPROFILE%`）下存放文件，这是我所不喜欢的。不管是开发工具还是应用软件，我喜欢“便携安装”方式（Portable installation），把程序、数据和文档等等集中放在一个文件夹里，可以随意复制、移动、备份。
 的确可以手工安装（[forge.rust-lang.org/infra/other…](https://link.juejin.cn/?target=https%3A%2F%2Fforge.rust-lang.org%2Finfra%2Fother-installation-methods.html) ），文档非常简略，没有给出具体步骤。所幸，事实表明，安装过程相当直观、顺利。我是昨天晚上安装的，此刻开始写这篇笔记已经是一天以后。
 Rust 安装工具是 `rustup-init.exe`，从上面的链接页面可以下载。64 位 Windows 下有`x86_64-pc-windows-gnu`和`x86_64-pc-windows-msvc`两个版本。根据交叉编译工具的 Triplet 命名惯例，这两个版本的目标 ABI 分别是 GNU（`windows-gnu`）和 Windows（`windows-msvc`）。我选 GNU。
 怀着对未知事物的忐忑心情，双击运行 `rustup-init.exe`，发现这是一个命令行工具。
-![image.jpg](https://cdn.nlark.com/yuque/0/2024/webp/34556458/1710989648798-58d32777-98ed-4cef-9aa6-70759e10d2e7.webp#averageHue=%233d3932&clientId=udbde2a64-5a39-4&from=paste&id=u709397bb&originHeight=362&originWidth=921&originalType=url&ratio=1&rotation=0&showTitle=false&size=31866&status=done&style=none&taskId=u0703c61a-1cd6-4e7e-b471-4ba02b345d9&title=)
+![1712140772343image.jpg](https://fastly.jsdelivr.net/gh/JaikenWong/Drawing-Bed@main/images/1712140772343image.jpg)
+
 _图片好像会占据页面宽度，被放大了。可以让图片保持原尺寸吗？_
 提示信息劝导安装 Visual Studio。说 Windows linker 和库是必须的，而 Visual Studio 可以提供这些东西。输入选项3，不装。
-![image.jpg](https://cdn.nlark.com/yuque/0/2024/webp/34556458/1710989648872-546bba9f-8550-440b-b77c-cc320b4f11db.webp#averageHue=%233d3931&clientId=udbde2a64-5a39-4&from=paste&id=u7cf3a3f9&originHeight=827&originWidth=804&originalType=url&ratio=1&rotation=0&showTitle=false&size=72150&status=done&style=none&taskId=u43988593-0f10-4db3-9c0d-d0ec4fed5ca&title=)
+![](https://fastly.jsdelivr.net/gh/JaikenWong/Drawing-Bed@main/images/1712140669393image.jpg)
+
 这一屏有一些有用的信息，
 
 - Rust 编译工具默认安装在 `%USERPROFILE%\.rustup` 目录，可以通过 `RUSTUP_HOME` 环境变量自定义
@@ -27,7 +29,8 @@ set CARGO_HOME=%CD%\.cargo
 .\rustup-init.exe
 ```
 在 `rustup-init.exe`启动后，重复前面的步骤，来到最后一屏时，输入选项2，自定义安装选项。主要是将 “default host triple” 设为`x86_64-pc-windows-gnu`，并且**不**修改系统 `PATH` 环境变量，详细步骤如下图。
-![image.jpg](https://cdn.nlark.com/yuque/0/2024/webp/34556458/1710989648837-4a4bba0a-9dca-4627-9eda-cffc49c7ee92.webp#averageHue=%230f0f0e&clientId=udbde2a64-5a39-4&from=paste&id=ucb672f75&originHeight=585&originWidth=816&originalType=url&ratio=1&rotation=0&showTitle=false&size=32794&status=done&style=none&taskId=ud4752275-9a52-485e-8663-afc33f03b2b&title=)
+![1712141055887image.jpg](https://fastly.jsdelivr.net/gh/JaikenWong/Drawing-Bed@main/images/1712141055887image.jpg)
+
 设定好安装选项后，输入选项1开始安装。安装过程中`rustup-init.exe`将会在线下载所需的包。耐心等待安装完成。
 在安装目录（`D:\devel\rust`）下创建一个批处理脚本，比如`rust_cmdline.bat`，内容如下：
 ```

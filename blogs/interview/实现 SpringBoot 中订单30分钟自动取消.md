@@ -2,7 +2,7 @@
 title: 实现 SpringBoot 中订单30分钟自动取消
 date: 2024/04/02
 categories:
- - interview
+ - 场景面试
 ---
 
 简介

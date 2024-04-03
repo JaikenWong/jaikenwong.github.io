@@ -38,8 +38,8 @@ export default defineUserConfig({
     },
     navbar: [
       { text: "Home", link: "/" },
-      { text: "操作系统", link: "/categories/system/1/" },
-      { text: "场景面试", link: "/categories/interview/1/" },
+      { text: "操作系统", link: "/categories/caozuoxitong/1/" },
+      { text: "场景面试", link: "/categories/changjingmianshi/1/" },
       { text: "Rust语言", link: "/categories/rust/1/" },
       {
         text: "开发工具",
