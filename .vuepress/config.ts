@@ -28,8 +28,12 @@ export default defineUserConfig({
       "/docs/clouddev/helm": [
         {
           text: "基础",
-          children: ["Helm基础概念.html","Helm安装示例.html","Heml模板语法.html"],
-        }
+          children: ["Helm基础概念.html","Helm安装示例.html",],
+        },
+        {
+          text: "模板",
+          children: ["Helm模板语法.html"],
+        },
       ],
     },
     navbar: [
