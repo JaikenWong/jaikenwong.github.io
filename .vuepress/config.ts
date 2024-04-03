@@ -44,7 +44,7 @@ export default defineUserConfig({
       {
         text: "开发工具",
         children: [
-          { text: "Terminal", link: "/categories/terminal/1/" },
+          { text: "Terminal", link: "/categories/Terminal/1/" },
           { text: "Git", link: "/categories/git/1/" },
           { text: "Git Pages", link: "/categories/gitpages/1/" },
           { text: "Other", link: "/categories/tools-other/1/" },
