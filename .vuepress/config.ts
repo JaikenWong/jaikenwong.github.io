@@ -25,14 +25,14 @@ export default defineUserConfig({
     lastUpdatedText: "",
     // series 为原 sidebar
     series: {
-      "/docs/theme-reco/": [
+      "/docs/clouddev/helm": [
         {
-          text: "module one",
-          children: ["home", "theme"],
+          text: "基础",
+          children: ["Helm基础概念","Helm安装示例"],
         },
         {
-          text: "module two",
-          children: ["api", "plugin"],
+          text: "模板",
+          children: ["Heml模板语法"],
         },
       ],
     },
@@ -53,7 +53,7 @@ export default defineUserConfig({
       {
         text: "云原生",
         children: [
-          { text: "Helm", link: "/docs/clouddev" },
+          { text: "Helm", link: "/docs/clouddev/helm/" },
           { text: "K8S", link: "/docs/clouddev" },
           { text: "Docker", link: "/docs/clouddev" },
           { text: "Istio", link: "/docs/clouddev" },

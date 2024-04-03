@@ -3,6 +3,8 @@ title: CPU调度中到达时间和突发时间的区别(arrivalTime,burstTime)
 date: 2024/04/02
 categories:
  - 操作系统
+tags:
+ - CPU调度
 ---
 
 CPU 调度算法需要其执行所需的 CPU 时间和 IO 时间。CPU时间是CPU执行进程所花费的时间，而I/O时间说明了进程进行I/O操作所需的时间。

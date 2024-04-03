@@ -3,6 +3,8 @@ title: Windows 安装 Rust
 date: 2024/04/02
 categories:
  - Rust
+tags:
+ - 安装
 ---
 
 Rust 本来提供了完整的 Windows 安装程序，但是要求同时安装 Visual C++ 编译工具，此外我怀疑它会修改系统（注册表、环境变量什么的），或者在用户目录（`%USERPROFILE%`）下存放文件，这是我所不喜欢的。不管是开发工具还是应用软件，我喜欢“便携安装”方式（Portable installation），把程序、数据和文档等等集中放在一个文件夹里，可以随意复制、移动、备份。

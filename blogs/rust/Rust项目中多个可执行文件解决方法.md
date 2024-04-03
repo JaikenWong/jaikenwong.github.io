@@ -3,6 +3,8 @@ title: Rust项目中多个可执行文件解决方法
 date: 2024/04/03
 categories:
  - Rust
+tags:
+ - Tips
 ---
 
 ## 问题背景
