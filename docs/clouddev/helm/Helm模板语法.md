@@ -131,7 +131,9 @@ with主要就是用来修改 . 作用域的，默认 . 代表全局作用域，w
 drink: {{ .drink | default "tea" | quote }}   #相当于.Values.favorite.drink
 food: {{ .food | upper | quote }}
 {{- end }}
+
 ps: 不能在with作用域内使用 . 引用全局对象, 如果非要在with里面引用全局对象，可以先在with外面将全局对象复制给一个变量，然后在with内部使用这个变量引用全局对象。
+
 例子:{{- $release:= .Release.Name -}}   #先将值保存起来{{- with .Values.favorite }}
 drink: {{ .drink | default "tea" | quote }}   #相当于.Values.favorite.drink
 food: {{ .food | upper | quote }}
@@ -188,6 +190,7 @@ map类型遍历例子:
 ```
 我们可以在_(下划线)开头的文件中定义子模版，方便后续复用。
 helm create默认为我们创建了_helpers.tpl 公共库定义文件，可以直接在里面定义子模版，也可以新建一个，只要以下划线开头命名即可。
+
 子模版语法:
 定义模版{{ define "模版名字" }} 模版内容 {{ end }}
 引用模版:
