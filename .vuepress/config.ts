@@ -24,7 +24,7 @@ export default defineUserConfig({
     logo: "/logo-small.png",
     author: "Jaiken Wong",
     authorAvatar: "/logo-small.png",
-    docsRepo: "https://github.com/JaikenWong/jaikenwong.github.io",
+    docsRepo: "https://github.com/JaikenWong/jaikenwong.github.io.git",
     docsBranch: "gh-pages",
     docsDir: "/",
     lastUpdatedText: "",
