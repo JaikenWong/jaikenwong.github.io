@@ -31,13 +31,24 @@ export default defineUserConfig({
     plugins: [
     ],
     commentConfig: {
-      type: 'valine',
+      type: 'giscus',
       options: {
-        appId: 'cEfaJdMxT5GADwcVdafssfDR-gzGzoHsz', // your appId
-        appKey: 'jyIMDRb3gSK3Bl2hIYpQev7O', // your appKey
+        repo: 'JaikenWong/jaikenwong.github.io',
+        repoId: 'R_kgDOLoVp8w',
+        category: 'Announcements',
+        categoryId: 'DIC_kwDOLoVp884CeYXI',
+        mapping: 'title',
         hideComments: false, // 全局隐藏评论，默认 false
       },
     },
+    // commentConfig: {
+    //   type: 'valine',
+    //   options: {
+    //     appId: 'cEfaJdMxT5GADwcVdafssfDR-gzGzoHsz', // your appId
+    //     appKey: 'jyIMDRb3gSK3Bl2hIYpQev7O', // your appKey
+    //     hideComments: false, // 全局隐藏评论，默认 false
+    //   },
+    // },
     // series 为原 sidebar
     series: {
       "/docs/clouddev/helm": [
