@@ -24,9 +24,9 @@ export default defineUserConfig({
     docsDir: "/",
     lastUpdatedText: "",
     plugins: [
-      [
-        "vuepress-plugin-copycodeblock"
-      ]
+      // [
+      //   "vuepress-plugin-copycodeblock"
+      // ]
     ],
     commentConfig: {
       type: 'valine',
