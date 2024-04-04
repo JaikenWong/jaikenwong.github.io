@@ -4,6 +4,11 @@ import recoTheme from "vuepress-theme-reco";
 export default defineUserConfig({
   title: "Jaiken's Blog",
   description: "Just playing around",
+  locales: {
+    "/": {
+      lang: "zh-CN",
+    },
+  },
   head: [
     ["link", { rel: "icon", href: "/favicon.ico" }],
     [
@@ -24,9 +29,6 @@ export default defineUserConfig({
     docsDir: "/",
     lastUpdatedText: "",
     plugins: [
-      // [
-      //   "vuepress-plugin-copycodeblock"
-      // ]
     ],
     commentConfig: {
       type: 'valine',
@@ -69,7 +71,7 @@ export default defineUserConfig({
           { text: "Helm", link: "/docs/clouddev/helm/" },
           { text: "K8S", link: "/docs/clouddev" },
           { text: "Docker", link: "/docs/clouddev" },
-          { text: "Istio", link: "/docs/clouddev" },
+          { text: "Istio", link: "/docs/clouddev/istio" },
         ],
       },
     ],
