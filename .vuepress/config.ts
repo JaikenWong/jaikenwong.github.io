@@ -23,6 +23,14 @@ export default defineUserConfig({
     docsBranch: "gh-pages",
     docsDir: "/",
     lastUpdatedText: "",
+    commentConfig: {
+      type: 'valine',
+      options: {
+        appId: 'cEfaJdMxT5GADwcVdafssfDR-gzGzoHsz', // your appId
+        appKey: 'jyIMDRb3gSK3Bl2hIYpQev7O', // your appKey
+        hideComments: false, // 全局隐藏评论，默认 false
+      },
+    },
     // series 为原 sidebar
     series: {
       "/docs/clouddev/helm": [

@@ -11,6 +11,7 @@
     "build": "vuepress build ."
   },
   "dependencies": {
+    "@vuepress-reco/vuepress-plugin-comments": "^2.0.0-rc.5",
     "vuepress": "2.0.0-rc.0",
     "vuepress-theme-reco": "2.0.0-rc.5"
   }
