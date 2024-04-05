@@ -28,16 +28,15 @@ export default defineUserConfig({
     docsBranch: "gh-pages",
     docsDir: "/",
     lastUpdatedText: "",
-    plugins: [
-    ],
+    plugins: [],
     commentConfig: {
-      type: 'giscus',
+      type: "giscus",
       options: {
-        repo: 'JaikenWong/jaikenwong.github.io',
-        repoId: 'R_kgDOLoVp8w',
-        category: 'Announcements',
-        categoryId: 'DIC_kwDOLoVp884CeYXI',
-        mapping: 'title',
+        repo: "JaikenWong/jaikenwong.github.io",
+        repoId: "R_kgDOLoVp8w",
+        category: "Announcements",
+        categoryId: "DIC_kwDOLoVp884CeYXI",
+        mapping: "title",
         hideComments: false, // 全局隐藏评论，默认 false
       },
     },
@@ -54,7 +53,7 @@ export default defineUserConfig({
       "/docs/clouddev/helm": [
         {
           text: "基础",
-          children: ["Helm基础概念.html","Helm安装示例.html",],
+          children: ["Helm基础概念.html", "Helm安装示例.html"],
         },
         {
           text: "模板",
@@ -64,6 +63,7 @@ export default defineUserConfig({
     },
     navbar: [
       { text: "Home", link: "/" },
+      { text: "时间纵轴", link: "/timeline/" },
       { text: "操作系统", link: "/categories/caozuoxitong/1/" },
       { text: "场景面试", link: "/categories/changjingmianshi/1/" },
       { text: "Rust语言", link: "/categories/Rust/1/" },
