@@ -2,6 +2,8 @@
 title: Windows terminal美化工具Oh-My-Posh
 date: 2024/04/02
 categories:
+ - Tools
+tags:
  - Terminal
 ---
 
