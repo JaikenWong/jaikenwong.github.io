@@ -71,6 +71,7 @@ export default defineUserConfig({
         text: "开发工具",
         children: [
           { text: "Terminal", link: "/tags/Terminal/1/" },
+          { text: "Keyboard", link: "/tags/keyboard/1/" },
           { text: "Github图床", link: "/tags/Githubtuchuang/1/" },
           { text: "Git", link: "/categories/git/1/" },
           { text: "Git Pages", link: "/categories/gitpages/1/" },
