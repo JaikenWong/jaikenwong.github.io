@@ -18,7 +18,7 @@ tags:
 
 ![img](https://cdn.jsdelivr.net/gh/JaikenWong/Drawing-Bed/images/2024-04-06/30378676-f376-11ee-9fa5-02d634b58295.png)
 
-## Github 图床配置
+## 2. Github 图床配置
 
 ```bash
 ghp_*******
