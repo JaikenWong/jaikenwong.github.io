@@ -1,5 +1,5 @@
 ---
-title: Github图床+Python+Typora
+title: Github图床 Python Typora
 date: 2024/04/06
 categories:
  - Tools
