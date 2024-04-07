@@ -80,7 +80,7 @@ def upload_file(file_data):
     req = requests.put(url=url, data=data, headers=headers)
     req.encoding = "utf-8"
     re_data = json.loads(req.text)
-    print("https://cdn.jsdelivr.net/gh/JaikenWong/Drawing-Bed/images/" + path +
+    print("https://cdn.jsdelivr.net/gh/JaikenWong/Drawing-Bed@main/images/" + path +
           "/" + file_name)
     # 这个打印会回显给Typora cdn.jsdelivr.net 是免费的加速cdn
 
