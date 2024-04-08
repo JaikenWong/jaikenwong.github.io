@@ -67,7 +67,7 @@ def upload_file(file_data):
     # JaikenWong/Drawing-Bed
     # images
     # main
-    token = "ghp_******"  ## 自行去github生成token，不懂得文章最好会写
+    token = "ghp_******"  ## github -> settings -> Developer Settings -> Personal access tokens -> Tokens(classic) -> Generate new token (classic)
     curr_time = datetime.datetime.now()
     path = curr_time.strftime("%Y-%m-%d") # 日期文件夹
     url = "https://api.github.com/repos/JaikenWong/Drawing-Bed/contents/images/" + path + "/" + file_name  # 用户名、库名、路径
