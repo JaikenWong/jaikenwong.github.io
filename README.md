@@ -16,6 +16,6 @@
 
 <div align="center">
 
-# 🚀 Welcome to **Jaiken's Blog** 🚀
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&random=false&width=435&lines=🚀+Welcome+to+Jaiken's+Blog+🚀)](https://blog.jaiken.top/)
 
 </div>
