@@ -60,6 +60,13 @@ export default defineUserConfig({
           children: ["Helm模板语法.html"],
         },
       ],
+
+      "/docs/datastructures": [
+        {
+          text: "数据结构",
+          children: ["稀疏数组.html"],
+        }
+      ]
     },
     navbar: [
       { text: "Home", link: "/" },
@@ -85,6 +92,13 @@ export default defineUserConfig({
           { text: "K8S", link: "/docs/clouddev" },
           { text: "Docker", link: "/docs/clouddev" },
           { text: "Istio", link: "/docs/clouddev/istio" },
+        ],
+      },
+      {
+        text: "算法和数据结构",
+        children: [
+          { text: "算法", link: "/docs/algorithms/" },
+          { text: "数据结构", link: "/docs/datastructures/" }
         ],
       },
     ],
