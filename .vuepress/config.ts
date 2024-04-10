@@ -66,6 +66,13 @@ export default defineUserConfig({
           text: "数据结构",
           children: ["稀疏数组.html"],
         }
+      ],
+
+      "/docs/algorithms": [
+        {
+          text: "算法",
+          children: ["博耶-摩尔投票算法.html"],
+        }
       ]
     },
     navbar: [
