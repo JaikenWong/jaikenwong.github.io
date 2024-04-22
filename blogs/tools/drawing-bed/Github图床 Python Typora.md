@@ -38,10 +38,23 @@ import sys
 
 ext = ""
 
+# 判断是不是 url
+def is_valid_url(url):
+    try:
+        result = urlparse(url)
+        return all([result.scheme, result.netloc])
+    except ValueError:
+        return False
 
 # 从文件夹下 读取文件
 def read_dir(file):
     global ext
+    if is_valid_url(file): # 如果是网络图片
+        # 图片保存在内存
+        ext = ".jpg"
+        response = requests.get(file)
+        # 得到图片的base64编码
+        return file_base64(response.content)
     if not os.path.isdir(file):  # 判断是否是文件夹，不是文件夹才打开
         ext = os.path.splitext(file)[1] # 文件后缀
         with open(file, 'rb') as f:  # rb 二进制 读取
