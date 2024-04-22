@@ -54,6 +54,8 @@ AVL的生成演示：https://www.cs.usfca.edu/~galles/visualization/AVLtree.html
 
 ### 2. 红黑树
 
+演示 https://www.cs.usfca.edu/~galles/visualization/RedBlack.html
+
 - hashmap存储
 - 两次旋转达到平衡
 - 分为红黑节点
@@ -65,6 +67,8 @@ AVL的生成演示：https://www.cs.usfca.edu/~galles/visualization/AVLtree.html
 当再次插入7的时候，这棵树就会发生旋转
 
 ![img](https://cdn.jsdelivr.net/gh/JaikenWong/Drawing-Bed@main/images/2024-04-22/854bb671-00a5-11ef-8713-70cf4959429b.jpg)
+
+![r-b-tree](https://cdn.jsdelivr.net/gh/JaikenWong/Drawing-Bed@main/images/2024-04-22/105f7a17-00a8-11ef-a37c-70cf4959429b.gif)
 
 ### 3. B 树
 
