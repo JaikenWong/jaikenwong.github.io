@@ -78,26 +78,26 @@ export default defineUserConfig({
       "/docs/interview/scene/": [
         {
           text: "场景面试",
-          children: ["实现 SpringBoot 中订单30分钟自动取消.html"],
+          children: ["实现SpringBoot中订单30分钟自动取消.html"],
         }
       ],
 
       "/docs/interview/mysql/": [
         {
           text: "MySQL 索引",
-          children: ["MySQL 索引.html"],
+          children: ["MySQL索引.html"],
         },
         {
           text: "MySQL 内部技术架构",
-          children: ["MySQL 内部技术架构.html"],
+          children: ["MySQL内部技术架构.html"],
         },
         {
           text: "MySQL 事务",
-          children: ["MySQL 事务.html"],
+          children: ["MySQL事务.html"],
         },
         {
           text: "MySQL 开发",
-          children: ["MySQL 开发.html"],
+          children: ["MySQL开发.html"],
         },
       ],
     },
