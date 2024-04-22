@@ -1,5 +1,5 @@
 ---
-title: MySQL 面试题之索引
+title: MySQL 面试题之索引0-7
 date: 2024/04/22
 categories:
  - 面试题
