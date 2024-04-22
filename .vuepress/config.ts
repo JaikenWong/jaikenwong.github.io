@@ -85,7 +85,7 @@ export default defineUserConfig({
       "/docs/interview/mysql/": [
         {
           text: "MySQL 索引",
-          children: ["MySQL索引1-7.html","MySQL索引相关数据结构.html"],
+          children: ["MySQL索引1-7.html", "MySQL索引相关数据结构.html"],
         },
         {
           text: "MySQL 内部技术架构",
