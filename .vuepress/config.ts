@@ -73,13 +73,31 @@ export default defineUserConfig({
           text: "算法",
           children: ["博耶-摩尔投票算法.html"],
         }
-      ]
+      ],
+
+      "/docs/interview/mysql/": [
+        {
+          text: "MySQL 索引",
+          children: ["MySQL 索引.html"],
+        },
+        {
+          text: "MySQL 内部技术架构",
+          children: ["MySQL 内部技术架构.html"],
+        },
+        {
+          text: "MySQL 事务",
+          children: ["MySQL 事务.html"],
+        },
+        {
+          text: "MySQL 开发",
+          children: ["MySQL 开发.html"],
+        },
+      ],
     },
     navbar: [
       { text: "Home", link: "/" },
       { text: "时间纵轴", link: "/timeline/" },
       { text: "操作系统", link: "/categories/caozuoxitong/1/" },
-      { text: "场景面试", link: "/categories/changjingmianshi/1/" },
       { text: "Rust语言", link: "/categories/Rust/1/" },
       {
         text: "开发工具",
@@ -106,6 +124,13 @@ export default defineUserConfig({
         children: [
           { text: "算法", link: "/docs/algorithms/" },
           { text: "数据结构", link: "/docs/datastructures/" }
+        ],
+      },
+      {
+        text: "面经",
+        children: [
+          { text: "MySQL", link: "/docs/interview/mysql/" },
+          { text: "Scene", link: "/docs/interview/scene/" }
         ],
       },
     ],
