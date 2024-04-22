@@ -75,6 +75,13 @@ export default defineUserConfig({
         }
       ],
 
+      "/docs/interview/scene/": [
+        {
+          text: "场景面试",
+          children: ["实现 SpringBoot 中订单30分钟自动取消.html"],
+        }
+      ],
+
       "/docs/interview/mysql/": [
         {
           text: "MySQL 索引",
