@@ -20,7 +20,7 @@ B+树的非叶子节点不存储用户记录，只存储目录记录，相对B�
 
 ## 010	使用B+树存储的索引crud执行效率如何？
 
-O(![img](https://cdn.nlark.com/yuque/__latex/23d5db5abacc819fe2dc29a1ff37f687.svg))
+![17142297659371714229765887.png](https://cdn.jsdelivr.net/gh/JaikenWong/Drawing-Bed@main/images/2024-04-27/4c3762e4-04a6-11ef-83f1-70cf4959429b.jpg)
 
 N = 高度
 
