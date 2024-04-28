@@ -118,6 +118,12 @@ export default defineUserConfig({
         ],
       },
       {
+        text: "AI",
+        children: [
+          { text: "文字转语音", link: "/tags/AI/1/" },
+        ],
+      },
+      {
         text: "云原生",
         children: [
           { text: "Helm", link: "/docs/clouddev/helm/" },
