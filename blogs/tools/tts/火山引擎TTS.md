@@ -158,6 +158,7 @@ AppID/Token/Cluster 等信息可参考 [控制台使用FAQ-Q1](https://www.volce
 
 ## 5. Demo
 
+### 5.1 Python 示例
 ```python
 #coding=utf-8
 
@@ -220,3 +221,50 @@ if __name__ == '__main__':
     except Exception as e:
         e.with_traceback()
 ```
+
+### 5.2 Java 示例
+
+```java
+package com.bytedance.tts.demo;
+
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import okhttp3.*;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Base64;
+
+public class TtsHttpClient {
+
+    public static final String HOST = "openspeech.bytedance.com";
+    public static final String API_URL = "https://" + HOST + "/api/v1/tts";
+    public static final String ACCESS_TOKEN = "08nuE********F43GNhZs";
+
+    public static void main(String[] args) throws IOException {
+        TtsRequest ttsRequest = new TtsRequest("字节跳动人工智能实验室我要语音合成");
+        post(API_URL, JSON.toJSONString(ttsRequest));
+    }
+
+    public static void post(String url, String json) throws IOException {
+        OkHttpClient client = new OkHttpClient();
+        RequestBody body = RequestBody.create(json, MediaType.get("application/json; charset=utf-8"));
+        Request request = new Request.Builder()
+                .url(url)
+                .post(body)
+                .header("Authorization", "Bearer; " + ACCESS_TOKEN)
+                .build();
+        try (Response response = client.newCall(request).execute()) {
+            JSONObject responseJson = JSON.parseObject(response.body().string());
+            System.out.println(responseJson.get("message"));
+            byte[] decodedBytes = Base64.getDecoder().decode((String) responseJson.get("data"));
+            try(FileOutputStream stream = new FileOutputStream("audio.wav")) {
+                stream.write(decodedBytes);
+            }
+        }
+    }
+}
+
+// TTSRequest 就是根据JSON 转化过来的
+```
+
