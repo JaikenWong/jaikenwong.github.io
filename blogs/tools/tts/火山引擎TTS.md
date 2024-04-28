@@ -49,7 +49,7 @@ AppID/Token/Cluster 等信息可参考 [控制台使用FAQ-Q1](https://www.volce
 | language         | 语言类型             | 2    | string     |      | [发音人参数列表](https://www.volcengine.com/docs/6561/79824) |
 | request          | 请求相关配置         | 1    | dict       | ✓    |                                                              |
 | reqid            | 请求标识             | 2    | string     | ✓    | 需要保证每次调用传入值唯一，建议使用 UUID                    |
-| text             | 文本                 | 2    | string     | ✓    | 合成语音的文本，长度限制 1024 字节（UTF-8编码）。**复刻音色没有此限制，但是HTTP接口有60s超时限制** |
+| text             | 文本                 | 2    | string     | ✓    | 合成语音的文本，长度限制 1024 字节（UTF-8编码）。**复刻音色没有此限制，但是HTTP接口有60s超时限制** 大约就是333 个字 |
 | text_type        | 文本类型             | 2    | string     |      | plain / ssml, 默认为plain                                    |
 | silence_duration | 句尾静音时长         | 2    | int        |      | 单位为ms，默认为125                                          |
 | operation        | 操作                 | 2    | string     | ✓    | query（非流式，http只能query） / submit（流式）              |
