@@ -112,9 +112,6 @@ export default defineUserConfig({
           { text: "Terminal", link: "/tags/Terminal/1/" },
           { text: "Keyboard", link: "/tags/keyboard/1/" },
           { text: "Github图床", link: "/tags/Githubtuchuang/1/" },
-          // { text: "AI", link: "/tags/AI/1/" },
-          // { text: "Git Pages", link: "/categories/gitpages/1/" },
-          // { text: "Other", link: "/categories/tools-other/1/" },
         ],
       },
       {
