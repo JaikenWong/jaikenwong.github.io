@@ -117,7 +117,7 @@ export default defineUserConfig({
       {
         text: "AI",
         children: [
-          { text: "文字转语音", link: "/categories/AI/1/" },
+          { text: "文字转语音", link: "/tags/TTS/1/" },
         ],
       },
       {
