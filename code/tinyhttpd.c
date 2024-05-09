@@ -11,6 +11,8 @@
  *  3) Comment out the two lines that run pthread_create().
  *  4) Uncomment the line that runs accept_request().
  *  5) Remove -lsocket from the Makefile.
+ * 
+ * Only run on linux or mac
  */
 #include <stdio.h>
 #include <sys/socket.h>
