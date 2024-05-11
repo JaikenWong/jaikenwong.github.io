@@ -32,9 +32,9 @@
 #define ISspace(x) isspace((int)(x))
 
 #define SERVER_STRING "Server: jdbhttpd/0.1.0\r\n"
-#define STDIN   0
-#define STDOUT  1
-#define STDERR  2
+#define STDIN 0
+#define STDOUT 1
+#define STDERR 2
 
 void accept_request(void *);
 void bad_request(int);
@@ -64,18 +64,19 @@ void accept_request(void *arg)
     char path[512];
     size_t i, j;
     struct stat st;
-    int cgi = 0;      /* becomes true if server decides this is a CGI
-                       * program */
+    int cgi = 0; /* becomes true if server decides this is a CGI
+                  * program */
     char *query_string = NULL;
 
     numchars = get_line(client, buf, sizeof(buf));
-    i = 0; j = 0;
+    i = 0;
+    j = 0;
     while (!ISspace(buf[i]) && (i < sizeof(method) - 1))
     {
         method[i] = buf[i];
         i++;
     }
-    j=i;
+    j = i;
     method[i] = '\0';
 
     if (strcasecmp(method, "GET") && strcasecmp(method, "POST"))
@@ -93,7 +94,8 @@ void accept_request(void *arg)
     while (!ISspace(buf[j]) && (i < sizeof(url) - 1) && (j < numchars))
     {
         url[i] = buf[j];
-        i++; j++;
+        i++;
+        j++;
     }
     url[i] = '\0';
 
@@ -113,8 +115,9 @@ void accept_request(void *arg)
     sprintf(path, "htdocs%s", url);
     if (path[strlen(path) - 1] == '/')
         strcat(path, "index.html");
-    if (stat(path, &st) == -1) {
-        while ((numchars > 0) && strcmp("\n", buf))  /* read & discard headers */
+    if (stat(path, &st) == -1)
+    {
+        while ((numchars > 0) && strcmp("\n", buf)) /* read & discard headers */
             numchars = get_line(client, buf, sizeof(buf));
         not_found(client);
     }
@@ -123,8 +126,8 @@ void accept_request(void *arg)
         if ((st.st_mode & S_IFMT) == S_IFDIR)
             strcat(path, "/index.html");
         if ((st.st_mode & S_IXUSR) ||
-                (st.st_mode & S_IXGRP) ||
-                (st.st_mode & S_IXOTH)    )
+            (st.st_mode & S_IXGRP) ||
+            (st.st_mode & S_IXOTH))
             cgi = 1;
         if (!cgi)
             serve_file(client, path);
@@ -210,7 +213,7 @@ void error_die(const char *sc)
  *             path to the CGI script */
 /**********************************************************************/
 void execute_cgi(int client, const char *path,
-        const char *method, const char *query_string)
+                 const char *method, const char *query_string)
 {
     char buf[1024];
     int cgi_output[2];
@@ -222,9 +225,10 @@ void execute_cgi(int client, const char *path,
     int numchars = 1;
     int content_length = -1;
 
-    buf[0] = 'A'; buf[1] = '\0';
+    buf[0] = 'A';
+    buf[1] = '\0';
     if (strcasecmp(method, "GET") == 0)
-        while ((numchars > 0) && strcmp("\n", buf))  /* read & discard headers */
+        while ((numchars > 0) && strcmp("\n", buf)) /* read & discard headers */
             numchars = get_line(client, buf, sizeof(buf));
     else if (strcasecmp(method, "POST") == 0) /*POST*/
     {
@@ -236,32 +240,35 @@ void execute_cgi(int client, const char *path,
                 content_length = atoi(&(buf[16]));
             numchars = get_line(client, buf, sizeof(buf));
         }
-        if (content_length == -1) {
+        if (content_length == -1)
+        {
             bad_request(client);
             return;
         }
     }
-    else/*HEAD or other*/
+    else /*HEAD or other*/
     {
     }
 
-
-    if (pipe(cgi_output) < 0) {
+    if (pipe(cgi_output) < 0)
+    {
         cannot_execute(client);
         return;
     }
-    if (pipe(cgi_input) < 0) {
+    if (pipe(cgi_input) < 0)
+    {
         cannot_execute(client);
         return;
     }
 
-    if ( (pid = fork()) < 0 ) {
+    if ((pid = fork()) < 0)
+    {
         cannot_execute(client);
         return;
     }
     sprintf(buf, "HTTP/1.0 200 OK\r\n");
     send(client, buf, strlen(buf), 0);
-    if (pid == 0)  /* child: CGI script */
+    if (pid == 0) /* child: CGI script */
     {
         char meth_env[255];
         char query_env[255];
@@ -273,21 +280,26 @@ void execute_cgi(int client, const char *path,
         close(cgi_input[1]);
         sprintf(meth_env, "REQUEST_METHOD=%s", method);
         putenv(meth_env);
-        if (strcasecmp(method, "GET") == 0) {
+        if (strcasecmp(method, "GET") == 0)
+        {
             sprintf(query_env, "QUERY_STRING=%s", query_string);
             putenv(query_env);
         }
-        else {   /* POST */
+        else
+        { /* POST */
             sprintf(length_env, "CONTENT_LENGTH=%d", content_length);
             putenv(length_env);
         }
         execl(path, NULL);
         exit(0);
-    } else {    /* parent */
+    }
+    else
+    { /* parent */
         close(cgi_output[1]);
         close(cgi_input[0]);
         if (strcasecmp(method, "POST") == 0)
-            for (i = 0; i < content_length; i++) {
+            for (i = 0; i < content_length; i++)
+            {
                 recv(client, &c, 1, 0);
                 write(cgi_input[1], &c, 1);
             }
@@ -342,7 +354,7 @@ int get_line(int sock, char *buf, int size)
     }
     buf[i] = '\0';
 
-    return(i);
+    return (i);
 }
 
 /**********************************************************************/
@@ -353,7 +365,7 @@ int get_line(int sock, char *buf, int size)
 void headers(int client, const char *filename)
 {
     char buf[1024];
-    (void)filename;  /* could use filename to determine file type */
+    (void)filename; /* could use filename to determine file type */
 
     strcpy(buf, "HTTP/1.0 200 OK\r\n");
     send(client, buf, strlen(buf), 0);
@@ -405,8 +417,9 @@ void serve_file(int client, const char *filename)
     int numchars = 1;
     char buf[1024];
 
-    buf[0] = 'A'; buf[1] = '\0';
-    while ((numchars > 0) && strcmp("\n", buf))  /* read & discard headers */
+    buf[0] = 'A';
+    buf[1] = '\0';
+    while ((numchars > 0) && strcmp("\n", buf)) /* read & discard headers */
         numchars = get_line(client, buf, sizeof(buf));
 
     resource = fopen(filename, "r");
@@ -441,13 +454,13 @@ int startup(u_short *port)
     name.sin_family = AF_INET;
     name.sin_port = htons(*port);
     name.sin_addr.s_addr = htonl(INADDR_ANY);
-    if ((setsockopt(httpd, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on))) < 0)  
-    {  
+    if ((setsockopt(httpd, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on))) < 0)
+    {
         error_die("setsockopt failed");
     }
     if (bind(httpd, (struct sockaddr *)&name, sizeof(name)) < 0)
         error_die("bind");
-    if (*port == 0)  /* if dynamically allocating a port */
+    if (*port == 0) /* if dynamically allocating a port */
     {
         socklen_t namelen = sizeof(name);
         if (getsockname(httpd, (struct sockaddr *)&name, &namelen) == -1)
@@ -456,7 +469,7 @@ int startup(u_short *port)
     }
     if (listen(httpd, 5) < 0)
         error_die("listen");
-    return(httpd);
+    return (httpd);
 }
 
 /**********************************************************************/
@@ -494,7 +507,7 @@ int main(void)
     u_short port = 4000;
     int client_sock = -1;
     struct sockaddr_in client_name;
-    socklen_t  client_name_len = sizeof(client_name);
+    socklen_t client_name_len = sizeof(client_name);
     pthread_t newthread;
 
     server_sock = startup(&port);
@@ -503,16 +516,16 @@ int main(void)
     while (1)
     {
         client_sock = accept(server_sock,
-                (struct sockaddr *)&client_name,
-                &client_name_len);
+                             (struct sockaddr *)&client_name,
+                             &client_name_len);
         if (client_sock == -1)
             error_die("accept");
         /* accept_request(&client_sock); */
-        if (pthread_create(&newthread , NULL, (void *)accept_request, (void *)(intptr_t)client_sock) != 0)
+        if (pthread_create(&newthread, NULL, (void *)accept_request, (void *)(intptr_t)client_sock) != 0)
             perror("pthread_create");
     }
 
     close(server_sock);
 
-    return(0);
+    return (0);
 }
