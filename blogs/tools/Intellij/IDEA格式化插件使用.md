@@ -30,11 +30,11 @@ idea重启后在设置里面打开 Adapter for Eclipse Code Formatter ，如图�
 
 [参考连接及文档](https://link.zhihu.com/?target=https%3A//github.com/yansheng836/eclipse-codestyle)
 
-![img](https://cdn.jsdelivr.net/gh/JaikenWong/Drawing-Bed/images/2024-04-06/711c41b4-f3de-11ee-a03c-02d634b58295.png)
+![alt text](https://cdn.jsdelivr.net/gh/JaikenWong/Drawing-Bed@main/images/2024-06-30/a8d4b274-36a7-11ef-bbd1-02d634b58294.png)
 
 ## 3. 插件配置
 
-![img](https://cdn.jsdelivr.net/gh/JaikenWong/Drawing-Bed/images/2024-04-06/713013ce-f3de-11ee-a5bd-02d634b58295.png)
+![alt text](https://cdn.jsdelivr.net/gh/JaikenWong/Drawing-Bed@main/images/2024-06-30/b0c6a7f8-36a7-11ef-9eaf-02d634b58294.png)
 
 ## 4. 插件使用
 
