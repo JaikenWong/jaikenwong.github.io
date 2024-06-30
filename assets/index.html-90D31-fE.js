@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-190b1e5d","path":"/docs/clouddev/helm/","title":"云原生 Helm","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"createdTime":1712161566000,"updatedTime":1712161566000,"contributors":[{"name":"JaikenWong","email":"Jiccence@gmail.com","commits":1}]},"filePathRelative":"docs/clouddev/helm/README.md"}');export{e as data};

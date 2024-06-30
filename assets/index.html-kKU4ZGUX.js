@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-53a67326","path":"/tags/Code-Formatter/1/","title":"","lang":"zh-CN","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{t as data};

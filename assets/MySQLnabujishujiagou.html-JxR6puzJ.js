@@ -1,0 +1,1 @@
+import{_ as a,o as t,c as o,a as e,b as s}from"./app-520BETNP.js";const c={},n=e("h1",{id:"_1-逻辑架构概览",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#_1-逻辑架构概览","aria-hidden":"true"},"#"),s(" 1. 逻辑架构概览")],-1),r=[n];function _(i,d){return t(),o("div",null,r)}const u=a(c,[["render",_],["__file","MySQLnabujishujiagou.html.vue"]]);export{u as default};
